@@ -78,23 +78,12 @@ void loop()
   double rs = 0.073152;       // Radius of sector puelly [m] 
   
   // Calibration equation
-//  double ts = 0.0102*updatedPos - 2.4137;// Compute the angle of the sector pulley (ts) in degrees based on updatedPos (for MR Sensor) 
-//  double ts = -0.0975*totalAngle + 1.7176; // Compute the angle of the sector pulley (ts) in degrees based on totalAngle (for encoder)
   double ts = -0.0975*filteredAngle + 1.7176; // Compute the angle of the sector pulley (ts) in degrees based on totalAngle (for encoder)
+  
   // Handle position
   xh = rh*ts *(3.14 / 180);       // Compute the position of the handle (in meters) based on ts (in radians). 
                                    // NOTE: A negative sign was included to ensure that righward motions on the hapkit handle
                                    // correspons to positive xh values. 
-                                     
-  // Step B.8: print xh via serial monitor
-  //other values are also printed to assist with debugging if needed
-  // Comment serial print statements out before running motor 
-//  Serial.print(" force: ");
-//  Serial.print(force); 
-//  Serial.print(" encoderReading: ");
-//  Serial.print(totalAngle, 2);
-//  Serial.print(" xh: ");
-//  Serial.println(xh, 5);
 
   
   //*************************************************************
