@@ -6,6 +6,3 @@
 
 - An excel file is also provided which contains the hardware that is required for assembly, along with vendor links.
 
-
-
-# H3Kit
